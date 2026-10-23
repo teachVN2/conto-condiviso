@@ -12,6 +12,9 @@ public class Conto {
     // ISSUE #1 -> da implementare: versa(double importo)
     // ISSUE #2 -> da implementare: preleva(double importo)
     public void preleva(double importo) {
+        if (importo < 0) {
+            throw new IllegalArgumentException("Importo non valido");
+        }
         if (importo <= saldo) {
             saldo -= importo;
         } else {
