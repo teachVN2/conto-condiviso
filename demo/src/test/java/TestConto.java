@@ -38,4 +38,18 @@ public class TestConto {
             assert e.getMessage().equals("Importo non valido");
         }
     }
+
+    @Test 
+public void testVersa() {
+        Conto conto = new Conto("Mario Rossi", 1000.0);
+        conto.versa(500.0);
+        assert conto.getSaldo() == 1500.0;      
+    }
+
+    @Test 
+public void testVersaNegativo() {
+        Conto conto = new Conto("Mario Rossi", 1000.0);
+        conto.versa(-100.0);
+        assert conto.getSaldo() == 1000.0; // Il saldo non dovrebbe cambiare
+    }
 }
